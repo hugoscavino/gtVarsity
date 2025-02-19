@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PointList {
@@ -26,30 +27,38 @@ public class PointList {
             System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
 
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1:
-                    findCentroid(points);
-                    break;
-                case 2:
-                    findFarthestPair(points);
-                    break;
-                case 3:
-                    findClosestPair(points);
-                    break;
-                case 4:
-                    System.out.println("Exiting program.");
-                    scanner.close();
-                    return;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
+            try {
+                int choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        findCentroid(points);
+                        break;
+                    case 2:
+                        findFarthestPair(points);
+                        break;
+                    case 3:
+                        findClosestPair(points);
+                        break;
+                    case 4:
+                        System.out.println("Exiting program.");
+                        scanner.close();
+                        return;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                }
+            }
+            catch (InputMismatchException e){
+                System.out.println("Invalid choice. Please try again.");
             }
 
         }
 
     }
 
-    // Calculate and display the centroid of the points
+    /**
+     * <a href="https://www.omnicalculator.com/math/centroid">...</a>
+     * @param points
+     */
     public void findCentroid(double[][] points) {
         double sumX = 0;
         double sumY = 0;
