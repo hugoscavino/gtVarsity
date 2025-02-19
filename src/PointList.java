@@ -57,7 +57,7 @@ public class PointList {
 
     /**
      * <a href="https://www.omnicalculator.com/math/centroid">...</a>
-     * @param points
+     * @param points Coordinates
      */
     public void findCentroid(double[][] points) {
         double sumX = 0;
