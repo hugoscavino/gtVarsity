@@ -22,6 +22,6 @@ public class SubsetPrinter {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
         System.out.println("Subsets using first 3 elements:");
-        subsets(a, 4);
+        subsets(a, 3);
     }
 }
