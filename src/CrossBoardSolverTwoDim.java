@@ -11,7 +11,7 @@ public class CrossBoardSolverTwoDim {
 
     private void placeCrosses( int row, int n) {
         if (row == n) {
-            printBoard(board, n);
+            printBoard(board);
             System.out.println();
             return;
         }
@@ -44,7 +44,7 @@ public class CrossBoardSolverTwoDim {
         return true;
     }
 
-    private static void printBoard(int[][] board, int n) {
+    private static void printBoard(int[][] board) {
         for (int[] row : board) {
             for (int cell : row) {
                 System.out.print((cell == 1 ? "X" : ".") + " ");
