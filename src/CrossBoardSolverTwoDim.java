@@ -9,12 +9,7 @@ public class CrossBoardSolverTwoDim {
         size = n;
     }
 
-    public static void solveCrossBoard(int n) {
-
-        placeCrosses(0, n);
-    }
-
-    private static void placeCrosses( int row, int n) {
+    private void placeCrosses( int row, int n) {
         if (row == n) {
             printBoard(board, n);
             System.out.println();
@@ -61,6 +56,6 @@ public class CrossBoardSolverTwoDim {
     public static void main(String[] args) {
         int n = 8;
         CrossBoardSolverTwoDim solver = new CrossBoardSolverTwoDim(n);
-        solver.solveCrossBoard(n);
+        solver.placeCrosses(0, n);
     }
 }
