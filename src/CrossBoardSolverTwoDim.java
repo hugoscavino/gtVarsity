@@ -1,11 +1,20 @@
 public class CrossBoardSolverTwoDim {
 
-    public static void solveCrossBoard(int n) {
-        int[][] board = new int[n][n]; // 0 = empty, 1 = cross
-        placeCrosses(board, 0, n);
+
+    static int[][] board; // 0 = empty, 1 = cross
+    int size;
+
+    public CrossBoardSolverTwoDim(int n){
+        board = new int[n][n];
+        size = n;
     }
 
-    private static void placeCrosses(int[][] board, int row, int n) {
+    public static void solveCrossBoard(int n) {
+
+        placeCrosses(0, n);
+    }
+
+    private static void placeCrosses( int row, int n) {
         if (row == n) {
             printBoard(board, n);
             System.out.println();
@@ -13,15 +22,15 @@ public class CrossBoardSolverTwoDim {
         }
 
         for (int col = 0; col < n; col++) {
-            if (isSafe(board, row, col, n)) {
+            if (isSafe(row, col, n)) {
                 board[row][col] = 1;               // Place cross
-                placeCrosses(board, row + 1, n);   // Recurse to next row
+                placeCrosses(row + 1, n);   // Recurse to next row
                 board[row][col] = 0;               // Backtrack
             }
         }
     }
 
-    private static boolean isSafe(int[][] board, int row, int col, int n) {
+    private static boolean isSafe( int row, int col, int n) {
         // Check same column
         for (int i = 0; i < row; i++) {
             if (board[i][col] == 1) return false;
@@ -51,6 +60,7 @@ public class CrossBoardSolverTwoDim {
 
     public static void main(String[] args) {
         int n = 8;
-        solveCrossBoard(n);
+        CrossBoardSolverTwoDim solver = new CrossBoardSolverTwoDim(n);
+        solver.solveCrossBoard(n);
     }
 }
