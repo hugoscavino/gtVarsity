@@ -40,7 +40,7 @@ public class C {
      * --
      * int[] A = {4, 7, 2, 9};
      * xyz(A, 4)
-     *
+     *--
      * Recursive steps:
      * 	•	xyz(A, 1) → 0
      * 	•	xyz(A, 2) → max(0, |4 - 7|) = 3

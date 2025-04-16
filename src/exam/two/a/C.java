@@ -11,7 +11,7 @@ public class C {
 
         boolean a1 = xyz(A, left, m);
         boolean a2 = xyz(A, m+1, right);
-        boolean a3 = (A[m]!=A[m+1]);
+        boolean a3 = (A[m] != A[m+1]);
 
         return ( a1 &&  a2 && a3);
     }
@@ -19,8 +19,8 @@ public class C {
     /**
      * Final Answer:
      *
-     * This function returns true iff the array contains no pair of adjacent equal elements,
-     * but it does so by recursively checking subarrays and enforcing that:
+     * This function returns true if the array contains no pair of adjacent equal elements,
+     * but it does so by recursively checking sub-arrays and enforcing that:
      * It’s essentially a recursive check for adjacent duplicates, using a divide-and-conquer approach.
      * --
      * int[] A = {1, 2, 2, 3};
